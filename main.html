@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="program1.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            WhenUserCome();
+        });
+
+        function WhenUserCome() {
+            let text = document.getElementById("text");
+            let user = localStorage.getItem("User");
+            if (text && user) {
+                text.innerText = "Welcome, " + user + "!";
+                document.documentElement.style.setProperty('--user-name', '"' + user + '"');
+            } else {
+                console.error("Element with id 'text' not found or User not found in localStorage!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button type="button" id = "LOGOUT" onclick="LOGOUT();">LOG OUT</button>
+    <h1>Test Community!!</h1>
+    <img class="img" src="img/background.png" alt="background">
+    <section>
+        <div>
+            <fieldset id = "animation">
+                    <h1 id = "text"></h1>
+            </fieldset>
+        </div>      
+    </section>
+    <section>
+         <div>
+        <fieldset id = "nonani">
+            <h2 id = "Text2" data-scroll>Welcome To My First Community World!</h2>          
+        </fieldset>
+    </div>
+    </section>
+    <section>
+        <div id = "GOD">
+            <fieldset style="background-color: rgba(255, 255, 255, 0.8);">
+                <center>
+                <div class = "TEMP">
+                    <h3 id = "tmp"></h3>
+                </div>
+                <img src="img/GOD.png" width="40%" height="40%" alt="정민이(였던것)">
+                <h2 id="Text2">그냥 누르기</h2>
+                <button id = "godbless" type="button" onclick='GodBlessing()'>그냥 누르기</button>
+            </center>
+            </fieldset>
+        </div>
+    </section>
+    <section>
+        <div id="fake">
+            
+            <fieldset style="background-color: rgba(255, 255, 255, 0.8);" >
+                <center><h1>여기까지 내려오네ㅋ</h1></center>
+            </fieldset>
+        </div> 
+    </section>
+    <section>
+        <div>
+            <fieldset id="gamble" style="background-color: rgba(255, 255, 255, 0.8);">
+                <legend>즐거운!</legend>
+                <div>
+                    <h5 id = "point"></h5>
+                </div>
+                <h1 id="batting">동전 맞추기!!</h1>
+                <h4 id="sum"></h4>
+                <h4 id = "loading"></h4>
+                <h4 id = "wrong"></h4>
+                <img id = "gambler" src="img/gambler.png" width="60%" height="60%" alt="도박">
+                <div id="fnt">
+                    <label for="text">베팅금 <input type="text" id="textspace" autocomplete="off"></label><br><br>
+                    <button type="button" id="front" onclick='randomBet(parseInt(document.getElementById("textspace").value)); randomSum();'>앞면</button>
+                    <button type="button" id="back" onclick='randomBet(parseInt(document.getElementById("textspace").value)); randomSum();'>뒷면</button>
+
+                </div>
+            </fieldset>
+        </div>
+    </section>
+    <section>
+        <div>
+            <fieldset id = "jackpot" style="background-color: rgba(255, 255, 255, 0.8);">
+                <legend>님의 운빨은?</legend>
+                <div>
+                    <h1 id = "batting">JACKPOT ROULETTE!</h1>
+                    <img id = "jacker" class = "animation_none" src="img/gambler_jackpot.png" alt="쎅씨한아이">
+                    <h4 id = "say">최대 777배!!</h4>
+                    <input id = "battype" type="text" placeholder="금액을 입력하세요..." style="text-align: center;" autocomplete="off">
+                    <h4 id = FONT>JACKPOT</h4>
+                    <div class = "slot">
+                        <div class = "slot1">
+                            <img class = "rolling_start" id = "a"src="img/count/slotroll.gif" alt="돌아간다">
+                            <img class = "rolling" id = "1" src="img/count/slot.png" alt="slots1">
+                        </div>
+                        <div class = "slot2">
+                            <img class = "rolling_start" id = "b" src="img/count/slotroll.gif" alt="돌아간다">
+                            <img class = "rolling" id = "2" src="img/count/slot.png" alt="slots2">
+                        </div>
+                        <div class = "slot3">
+                            <img class = "rolling_start" id = "c" src="img/count/slotroll.gif" alt="돌아간다">
+                            <img class = "rolling" id = "3" src="img/count/slot.png" alt="slots3">
+                        </div>
+                    </div>
+                    <img id = "gifimg" src="img/slotstart.png" alt="레버">
+                    <img id = "jackpotmachine" src="img/jackpot.png" width="60%" height="60%" alt="잭팟머신">
+                </div>
+            </fieldset>
+        </div>
+    </section>
+    <section>
+        <fieldset id = "GOTO" style="background-color: rgba(255, 255, 255, 0.8);">
+            <legend>구현중!</legend>
+            <h1 id = "goto"><a href="main1.html">!!사이트 바로가기!!</a></h1>
+        </fieldset>
+    </section>
+
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script>
+            window.onload = function() {
+                gamblebasic();
+                const slotPos = [0, -73, -150, -230, -321, -404, -488, -580, -667, -760];
+                document.querySelectorAll(".rolling_start").forEach((element) => {
+                    document.getElementById("1").style.top = slotPos[getRandomInt1(10)] + "px";
+                    document.getElementById("2").style.top = slotPos[getRandomInt2(10)] + "px";
+                    document.getElementById("3").style.top = slotPos[getRandomInt3(10)] + "px";
+                    });
+                };
+    </script>
+    <script>ScrollOut({
+        once: false,
+      });</script>
+      <script>
+        let PointValue = parseInt(window.localStorage.getItem("point") || 0); // 총 코인
+        const gifimg = document.querySelector("#gifimg"); // 레버
+        const jackpot = document.getElementById("jacker"); // 케릭터 이미지
+        let money = document.getElementById("battype"); // 입력칸
+
+        gifimg.addEventListener('click', () => {
+            let MoneyValue = parseInt(money.value); // 코인 입력을 int형으로 받음(문자, 문자열 적었을 때 값 안받게 막기)
+            jackpot.className = "animation_none";
+            if (MoneyValue < PointValue) {
+                if (!MoneyValue || MoneyValue <= 0) { // 코인 입력 칸이 없거나 코인 입력 값이 없거나 0보다 작으면 실행됨
+                    console.log("값 오류!");
+                    jackpot.className = "animation_bounce2";
+                    jackpot.src = "img/gambler_jackpot_money.png";
+                    setTimeout(() => {
+                        jackpot.src = "img/gambler_jackpot.png";
+                        jackpot.className = "animation_bounce3";
+                    }, 1200);
+                } else { // 코인이 적지 않으면 함수 실행
+                    console.log("함수 실행 직전!");
+                    jackpot.className = "animation_bounce";
+                    setTimeout(function() {document.getElementById("a").style.display = "block"}, 0); 
+                    setTimeout(function() {document.getElementById("b").style.display = "block"}, 300); 
+                    setTimeout(function() {document.getElementById("c").style.display = "block"}, 700); 
+                    jackpot.src = "img/gambler_jackpot_load.png";
+                    gifimg.src = "img/slotstart.gif";
+                    startRoulette();
+                }
+            } else { // 코인이 적다!
+                console.log("코인이 적다!");
+                jackpot.className = "animation_bounce2";
+                jackpot.src = "img/gambler_jackpot_money.png";
+                setTimeout(() => {
+                    jackpot.src = "img/gambler_jackpot.png";
+                    jackpot.className = "animation_bounce3";
+                }, 1200);
+            }
+        });
+      </script>
+</body>
+</html>
