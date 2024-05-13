@@ -1,0 +1,645 @@
+@font-face {
+  font-family: 'GmarketSans';
+  src: local('GmarketSans'), url('font/gmarketsansttfmedium.woff') format('woff'), url('font/GmarketSansTTFMedium.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'GmarketSans';
+  background-color: white;
+}
+
+form {
+  text-align: center;
+  display: flex;
+  justify-content: center;  
+  border: 9px solid black;
+  
+}
+
+h1 {
+  font-size: 30px;
+  color: black;
+  text-align: center;
+}
+
+#Text2 {
+  font-size: 30px;
+  color: black;
+  text-align: center;
+}
+
+
+#nonani{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 100%;
+  left: 15%;
+  width: 1000px;
+  height: 150px;
+  max-height: 90%;
+  padding: 20px;
+  align-content: center;
+
+}
+#animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 150px;
+  max-width: 90%;
+  padding: 20px;
+  animation-name: fieldsetbar-open;
+  animation-duration: 1500ms;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#text {
+  font-size: 20px;
+  min-width: 11px;
+  white-space: nowrap;
+  margin: 0;
+  position: fixed;
+  color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+:root {
+--user-name: "Default User";
+}
+
+#text::before {
+  content: "Welcome, " var(--user-name) "!";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  overflow: hidden;
+  border-right: 1px solid black;
+  animation: typing 5s steps(31) infinite;
+}
+
+
+@keyframes typing{
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes fieldsetbar-open {
+  from {width: 200px;}
+  to{width : 1000px;}
+}
+.img {
+  z-index: -2;
+  position: fixed;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  background-image: url('img/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+ [data-scroll]{
+  transition: all 1s;
+}
+[data-scroll="in"]{
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+[data-scroll="out"]{
+  opacity: 0;
+  transform: translateY(120%);
+}
+
+#GOD {
+  position: absolute;   
+  top: 150%;
+  left: 15%;
+  width: 1000px;
+  height: 150px;
+  padding: 20px; 
+}
+
+#fake {
+  position: absolute;
+  text-align: center;
+  top: 700%; /* 상위 모서리가 부모 요소의 세로 중앙에 위치하도록 설정 */
+  left: 50%; /* 좌측 모서리가 부모 요소의 가로 중앙에 위치하도록 설정 */
+  transform: translate(-50%, -50%); /* 요소를 중앙으로 이동 */
+  width: 300px;
+  height: 150px;
+  padding: 20px; 
+}
+
+
+#tmp {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+.TEMP {
+z-index: 2;
+margin-top: 0 auto;
+}
+
+#LOGOUT {
+position: absolute;
+right: 30%;
+background-color: blue;
+font-family: 'GmarketSans';
+color: white;
+border-radius: 10px;
+padding: 10px;
+min-width: 50px;
+min-height: 30px;
+transition: 0.7s;
+}
+
+#LOGOUT:hover {
+background-color: blueviolet;
+transition: 0.7s;
+}
+
+#godbless {
+background-color: black;
+font-family: 'GmarketSans';
+color: white;
+border-radius: 10px;
+padding: 10px;
+min-width: 50px;
+min-height: 30px;
+transition: 0.7s;
+}
+
+#godbless:hover {
+background-color: gray;
+transition: 0.7s;
+}
+
+#gamble {
+position: absolute;
+text-align: center;
+top: 250%;
+left: 50%;
+margin-top: -85px; /* 높이의 절반만큼 위로 이동하여 요소를 수직 중앙에 배치 */
+margin-left: -550px; /* 너비의 절반만큼 왼쪽으로 이동하여 요소를 수평 중앙에 배치 */
+width: 500px;
+height: 500px;
+padding: 20px; 
+}
+
+#front {
+background-color: orange;
+font-family: 'GmarketSans';
+color: black;
+border-radius: 10px;
+padding: 10px;  
+min-width: 100px;
+min-height: 30px;
+transition: 0.7s;
+}
+
+#front:hover {
+background-color: orangered;
+transition: 0.7s;
+}
+
+#fnt {
+text-align: center;
+}
+
+#back {
+background-color: orange;
+font-family: 'GmarketSans';
+color: black;
+border-radius: 10px;
+padding: 10px;  
+min-width: 100px;
+min-height: 30px;
+transition: 0.7s;
+}
+
+#back:hover {
+background-color: orangered;
+transition: 0.7s;
+}
+
+#point {
+position: absolute;
+align-content: center;
+left: 5%;
+top: 4%;
+background-color: orange;
+width: 125px;
+height: 20px;
+border-radius: 10px;
+border-color: black;
+border: 3px solid;
+}
+
+#batting {
+background: linear-gradient(90deg,#ec1c24, #ec841c 15%, #ecdb1c 20%, #31ec1c 25%, #1ca3ec 30%, #501cec 35%, #aa1cec 40%, #501cec 45%,
+#1ca3ec 50%, #31ec1c 60%, #ecdb1c 70%, #ec841c 95%, #ec1c24 100%);
+-webkit-text-fill-color: transparent;
+background-clip: text;
+animation: gradient 3.5s reverse infinite;
+background-size: 200% 100%;
+}
+
+@keyframes gradient {
+0% {
+  background-position: 0;
+}
+
+100% {
+  background-position: 100%;
+}
+0% {
+  background-position: 0%;
+}
+}
+
+#textspace {
+  background-color: #501cec;
+  color: white;
+}
+
+#wrong {
+  font-style: italic;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ec1c24;
+  font-size: 30px;
+  opacity: 0%;
+  
+}
+.animation_move {
+  animation: message 2.5s ease-out;
+}
+
+@keyframes message {
+  0% {
+    opacity: 0%;
+    top: 48%;
+  }
+  50% {
+    opacity: 100%;
+    top: 40%;
+  }
+  100% {
+    opacity: 0%;
+    top: 40%;
+  }
+
+}
+
+#loading {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  align-content: center;
+  border: black solid;
+  border-radius: 5px;
+  width: 250px;
+  height: 60px;
+  font-size: 30px;
+  opacity: 0%;
+}
+
+.animation_loading {
+  animation: load 2.0s ease-out;
+}
+
+
+@keyframes load {
+  0% {
+    opacity: 0%;
+    top: 40%;
+  }
+  50% {
+    opacity: 100%;
+    top: 35%;
+  }
+  100% {
+    opacity: 0%;
+    top: 35%;
+  }
+}
+
+  #sum {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+    align-content: center;
+    border: black solid;
+    border-radius: 5px;
+    width: 250px;
+    height: 60px;
+    font-size: 30px;
+    opacity: 0%;
+  }
+  
+  .animation_answer {
+    animation: answer 2.0s ease-out;
+  }
+  @keyframes answer {
+    0% {
+      opacity: 0%;
+      top: 40%;
+    }
+    50% {
+      opacity: 100%;
+      top: 35%;
+    }
+    100% {
+      opacity: 0%;
+      top: 35%;
+    }
+}
+
+#jackpot {
+  position: absolute;
+  text-align: center;
+  top: 250%;
+  left: 50%;
+  margin-top: -85px; /* 높이의 절반만큼 위로 이동하여 요소를 수직 중앙에 배치 */
+  margin-left: 30px; /* 너비의 절반만큼 왼쪽으로 이동하여 요소를 수평 중앙에 배치 */
+  width: 500px;
+  height: 500px;
+  padding: 20px; 
+}
+
+#FONT {
+  position: absolute;
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+  margin-top: 40px;
+  margin-left: 167px;
+  background-origin: padding-box, content-box;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke: 0.05px yellow;
+  background: linear-gradient(90deg, #fff200 50%, transparent 50%) 0 0 / 5px 1.5px repeat-x, /* 상 */ linear-gradient(90deg, #fff200 50%, transparent 50%) 0 100% / 5px 1.5px repeat-x,
+  /* 하 */ linear-gradient(0, #fff200 50%, transparent 50%) 0 0 / 1.5px 5px repeat-y, /* 좌 */ linear-gradient(0, #fff200 50%, transparent 50%) 100% 0 / 1.5px 5px repeat-y; /* 우 */
+  animation: linearGradientMove 0.5s infinite steps(2, end);
+  z-index: 2;
+  outline: none;
+}
+
+@keyframes linearGradientMove {
+  100% {
+    background-position: 4px 0, -4px 100%, 0 -4px, 100% 4px;
+  }
+}
+
+
+.slot {
+  position: absolute;
+  align-content: center;
+  left: 121px;
+  top: 200px;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.slot1 {
+  position: inherit;
+  width: 50px;
+  height: 70px;
+  right: 185px;
+  background-color: orange;
+  display: inherit;
+  overflow: hidden;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.slot2 {
+  position: inherit;
+  width: 50px;
+  height: 70px;
+  background-color: orange;
+  overflow: hidden;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.slot3 {
+  left: 185px;
+  position: inherit;
+  width: 50px;
+  height: 70px;
+  background-color: orange;
+  overflow: hidden;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+#count {
+  position: relative;
+  top: 10%;
+  left: 5%;
+  width: 80%;
+  height: 80%;
+}
+
+#jacker {
+  position: absolute;
+  bottom: 3%;  
+  right: -18%;
+  transform: scale(40%, 40%);
+  z-index: 3;
+  transform-origin: bottom;
+}
+
+.animation_bounce
+{
+  animation: ScaleBounce 0.3s ease-out;
+}
+
+.animation_none {
+  animation: basicMove 1.5s ease-in-out infinite;
+}
+
+@keyframes basicMove {
+  0% {
+    transform: scale(40%, 40%);
+  }
+  50% {
+    transform: scale(40%, 39%);
+  }
+  100% {
+    transform: scale(40%, 40%);
+  }
+}
+
+@keyframes ScaleBounce {
+    25%{
+      transform: scale(40%, 35%);
+    }
+    70% {
+      transform: scale(40%, 45%);
+    }
+    85% {
+      transform: scale(40%, 38%);
+    }
+    90% {
+      transform: scale(40%, 43%);
+    }
+    100% {
+      transform: scale(40%, 40%);
+    }
+}
+
+.animation_bounce2 {
+  animation: ScaleBounce2 0.2s ease-out;
+}
+.animation_bounce3 {
+  animation: ScaleBounce3 0.2s ease-out;
+}
+
+@keyframes ScaleBounce2 {
+  25% {
+    transform: scale(40%, 35%);
+  }
+  50% {
+    transform: scale(40%, 38%);
+  }
+  100% {
+    transform: scale(40%, 40%);
+  }
+}
+
+@keyframes ScaleBounce3 {
+  25% {
+    transform: scale(40%, 35%);
+  }
+  50% {
+    transform: scale(40%, 38%);
+  }
+  100% {
+    transform: scale(40%, 40%);
+  }
+}
+
+
+#say {
+  position: absolute;
+  top: 73%;
+  left: 43%;
+}
+
+#battype {
+  position: absolute;
+  top: 19%;
+  left: 35%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid black;
+  z-index: 4;
+}
+
+#start {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 31%;
+  right: 17%;
+  z-index: 0;
+  opacity: 0%;
+} 
+
+#jackpotmachine {
+  position: absolute;
+  top: 19%;
+  right: 20%;
+  z-index: 1;
+  background: transparent;
+}
+
+
+#gifimg {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  top: 35%;
+  right: 19.5%;
+  z-index: 2;
+}
+
+.rolling {
+  position: absolute;
+  left: -13%;
+  width: 130%;
+  height: 1200%;
+  top: 0px;
+  transition: top 400ms cubic-bezier(.47,1.64,.41,.8);
+}
+
+.rolling_start {
+  position: absolute;
+  left: -13%;
+  display: none;
+  width: 125%;
+  height: 175%;
+  z-index: 3;
+}
+
+
+
+/* 0 = top 0px
+   1 = top -73px
+   2 = top -150px
+   3 = top -230px
+   4 = top -321px
+   5 = top -404px
+   6 = top -488px
+   7 = top -580px
+   8 = top -667px
+   9 = top -760px
+*/
+
+#GOTO {
+  position: absolute;
+  text-align: center;
+  width: 500px;
+  top: 330%;
+  padding: 40px;
+  left: 30%;  
+}

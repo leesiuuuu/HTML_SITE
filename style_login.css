@@ -1,0 +1,92 @@
+
+@font-face { /* 폰트 추가 */
+  font-family: 'GmarketSans';
+  src: local('GmarketSans'), url('font/gmarketsansttfmedium.woff'), format('woff'),
+  url('font/GmarketSansTTFMedium.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'GmarketSans';
+  background-image: url('img/background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+fieldset {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 90%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+h1 {
+  font-size: 30px;
+  color: orchid;
+  text-align: center;
+}
+
+.img {
+  background-attachment: fixed;
+  height: 100vh;
+  background-image: url('img/background.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+form {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border: 9px;
+  border-color: black;
+  
+}
+
+label{
+  font-size: 15px;
+  color: darkorchid;
+}
+
+.signup-main .signup {
+  right: 20%; /* 초기 위치를 중앙으로 설정 */
+  transform: translateX(20%); /* 중앙 정렬을 유지하기 위해 사용 */
+  opacity: 0;
+  transition: all 0.6s ease-out;
+  z-index: 10;
+}
+
+.signup-main:hover .signup {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+
+#sign-up-button {
+  background-color: black;
+  font-family: 'GmarketSans';
+  color: white;
+  border-radius: 10px;
+  padding: 8px;
+  min-width: 50px;
+  min-height: 30px;
+  transition: 0.4s;
+  
+}
+#sign-up-button:hover {
+  background-color: rgba(0, 0, 0, 0.8); 
+  transition: 0.4s;
+}
+
+
+
+
+
+

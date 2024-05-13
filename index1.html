@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="program1.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+</head>
+<body>
+    <h1>Welcom to Here!</h1>
+    <img class = "img" src="img/background.png" alt="background">
+    <div>
+    <form id="login-form" action="" autocomplete="off">
+        <link rel="stylesheet" href="style.css">
+        <ul class ="login-main">
+        <fieldset style="width: 500px; height:400px; border: 5;">
+            <div class = "login">
+                <img id="img" src="img/Test_image.png" width="40%" height="40%" alt="테스트 이미지">
+            </div>
+            <legend>Log In</legend>
+            
+                <label for="user-id">아이디 : <input type="text" id="user-id"></label><br>
+                <label for="password">비밀번호 : <input type="password" id="password"></label><br>
+            
+            <button id="login-form-submit" type = "button">Log In</button>
+            <button type = "button" id = "sign-up-button" onclick="window.location.href = 'signup.html'">Sign Up</button><br>
+            <a href="FindID.html">
+            <h5>Are you Forgot Your account or password?</h5></a>
+        </fieldset>
+    </div>
+    </ul>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            
+            let num = 0;
+            $("#img").click(function () {
+                if(num == 0) {
+                    $(this).attr("src", "img/wrong.png");
+                    ++num;
+                }else if(num == 1){
+                    $(this).attr("src", "img/help.png");
+                    ++num;
+                }else if(num == 2){
+                    $(this).attr("src", "img/log.png");
+                    ++num;
+                }else if(num >= 3){
+                    $(this).attr("src", "img/fuck.png");
+                    ++num;
+                }else{
+                    return;
+                }
+                     
+            });
+        });
+        
+        </script>
+</body>
+</html>
