@@ -46,6 +46,8 @@ function randomSum() {
 }
 //베팅 결과 함수
 function randomBet(betAmount) {
+    const button1 = document.getElementById("front");
+    const button2 = document.getElementById("back");
     const GamblerImage = document.getElementById("gambler"); //이미지
     var sumValue = localStorage.getItem("Sum"); //렌덤 값 받아옴
     var pointValue = parseInt(localStorage.getItem("point")); //총 코인출력
@@ -55,6 +57,8 @@ function randomBet(betAmount) {
     GamblerImage.src = "img/gambler.png";
     sum.className = "";
     loading.className = "";
+    button1.disabled = true;
+    button2.disabled = true;
 
     if (betAmount <= 0 || !betAmount) {
         GamblerImage.src = "img/gambler_wrong.png";
@@ -104,6 +108,8 @@ function randomBet(betAmount) {
                 GamblerImage.src = "img/gambler.png";
                 sum.innerText = "";
                 loading.className = "";
+                button1.disabled = false;
+                button2.disabled = false;
                 gamblebasic();
             }, 2000);
         }, 2000);
