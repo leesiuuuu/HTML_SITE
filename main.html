@@ -138,7 +138,7 @@
         once: false,
       });</script>
       <script>
-        let PointValue = parseInt(window.localStorage.getItem("point") || 0); // 총 코인
+        const PointValue = parseInt(window.localStorage.getItem("point") || 0); // 총 코인
         const gifimg = document.querySelector("#gifimg"); // 레버
         const jackpot = document.getElementById("jacker"); // 케릭터 이미지
         let money = document.getElementById("battype"); // 입력칸
@@ -146,9 +146,14 @@
         gifimg.addEventListener("click", clickFunction);
         
         function clickFunction(){
+
             let MoneyValue = parseInt(money.value); // 코인 입력을 int형으로 받음(문자, 문자열 적었을 때 값 안받게 막기)
             jackpot.className = "animation_none";
-            if (MoneyValue <= PointValue) {
+            if(PointValue <= 0){
+                return 0;
+            }
+            else{
+                            if (MoneyValue <= PointValue) {
                     eventCheck = 0;            
                     if(MoneyValue <= 0 || !MoneyValue){
                         eventCheck = 0;
@@ -160,7 +165,7 @@
                             jackpot.className = "animation_bounce3";
                         }, 1200);        
                     }    
-                    else if(PointValue - MoneyValue <= 0){
+                    else if(PointValue - MoneyValue < 0){
                         eventCheck = 0;
                         console.log("돈 값이 초과함!");
                         jackpot.className = "animation_bounce2";
@@ -193,6 +198,8 @@
                 }, 1200);
             }
         }
+            }
+
       </script>
 </body>
 </html>
