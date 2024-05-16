@@ -149,41 +149,42 @@
             let MoneyValue = parseInt(money.value); // 코인 입력을 int형으로 받음(문자, 문자열 적었을 때 값 안받게 막기)
             jackpot.className = "animation_none";
             if (MoneyValue <= PointValue) {
-                // 코인이 적지 않으면 함수 실행
-                    eventCheck = 1;
-                    console.log("함수 실행 직전!");
-                    jackpot.className = "animation_bounce";
-                    setTimeout(function() {document.getElementById("a").style.display = "block"}, 0); 
-                    setTimeout(function() {document.getElementById("b").style.display = "block"}, 300); 
-                    setTimeout(function() {document.getElementById("c").style.display = "block"}, 700); 
-                    jackpot.src = "img/gambler_jackpot_load.png";
-                    gifimg.src = "img/slotstart.gif";
-                    startRoulette();
-                    eventCheck = 0;
-            } 
-            else if(MoneyValue <= 0 || !MoneyValue){
-                eventCheck = 0;
-                console.log("에러남!");
-                jackpot.className = "animation_bounce2";
-                jackpot.src = "img/gambler_jackpot_money.png";
-                setTimeout(() => {
-                    jackpot.src = "img/gambler_jackpot.png";
-                    jackpot.className = "animation_bounce3";
-                }, 1200);
-            }
-            else if(PointValue - MoneyValue >= 0){
-                eventCheck = 0;
-                console.log("에러남!");
-                jackpot.className = "animation_bounce2";
-                jackpot.src = "img/gambler_jackpot_money.png";
-                setTimeout(() => {
-                    jackpot.src = "img/gambler_jackpot.png";
-                    jackpot.className = "animation_bounce3";
-                }, 1200);
-            }
+                    eventCheck = 0;            
+                    if(MoneyValue <= 0 || !MoneyValue){
+                        eventCheck = 0;
+                        console.log("돈이 없거나 칸이 비어있음!");
+                        jackpot.className = "animation_bounce2";
+                        jackpot.src = "img/gambler_jackpot_money.png";
+                        setTimeout(() => {
+                            jackpot.src = "img/gambler_jackpot.png";
+                            jackpot.className = "animation_bounce3";
+                        }, 1200);        
+                    }    
+                    else if(PointValue - MoneyValue <= 0){
+                        eventCheck = 0;
+                        console.log("돈 값이 초과함!");
+                        jackpot.className = "animation_bounce2";
+                        jackpot.src = "img/gambler_jackpot_money.png";
+                        setTimeout(() => {
+                            jackpot.src = "img/gambler_jackpot.png";
+                            jackpot.className = "animation_bounce3";
+                        }, 1200);
+                    }
+                    else{
+                        eventCheck = 1;
+                        console.log("함수 실행 직전!");
+                        jackpot.className = "animation_bounce";
+                        setTimeout(function() {document.getElementById("a").style.display = "block"}, 0); 
+                        setTimeout(function() {document.getElementById("b").style.display = "block"}, 300); 
+                        setTimeout(function() {document.getElementById("c").style.display = "block"}, 700); 
+                        jackpot.src = "img/gambler_jackpot_load.png";
+                        gifimg.src = "img/slotstart.gif";
+                        startRoulette();
+                        } // 코인이 적지 않으면 함수 실행               
+                }
             else { // 코인이 적을때
                 eventCheck = 0;
-                console.log("코인이 적다!");
+                console.log("돈 초과 오류!");
                 jackpot.className = "animation_bounce2";
                 jackpot.src = "img/gambler_jackpot_money.png";
                 setTimeout(() => {
