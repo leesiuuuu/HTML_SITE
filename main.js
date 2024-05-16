@@ -26,6 +26,9 @@ function gamblebasic() {
     let gamble = document.getElementById("point");
     let point = parseInt(window.localStorage.getItem('point')); // point 값을 가져옴
     gamble.innerText = `${point} COIN`; // 표시되어야 할 값을 설정
+    setTimeout(() => {
+        gifimg.addEventListener("click", clickFunction);
+    }, 2000);
 }
 
 
@@ -125,6 +128,7 @@ function getRandomInt3(max) {
 
 //잭팟 룰렛 판별, 실행 함수
 function startRoulette() {   
+    const gifimg = document.querySelector("#gifimg"); // 레버
     console.log("함수 실행됨!");
     let slot1 = document.getElementById("1").style;
     let slot2 = document.getElementById("2").style;
@@ -137,7 +141,8 @@ function startRoulette() {
     const jackpot = document.getElementById("jacker"); //케릭터 이미지
     const slotPos = [0, -73, -150, -230, -321, -404, -488, -580, -667, -760];
     localStorage.setItem("slotPos", JSON.stringify(slotPos));
-
+    
+    gifimg.removeEventListener("click", clickFunction);
 
     setTimeout(() => {
         setTimeout(function() {document.getElementById("c").style.display = "none"; 

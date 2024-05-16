@@ -143,12 +143,15 @@
         const gifimg = document.querySelector("#gifimg"); // 레버
         const jackpot = document.getElementById("jacker"); // 케릭터 이미지
         let money = document.getElementById("battype"); // 입력칸
-
-        gifimg.addEventListener('click', () => {
+        
+        gifimg.addEventListener("click", clickFunction);
+        
+        function clickFunction(){
             let MoneyValue = parseInt(money.value); // 코인 입력을 int형으로 받음(문자, 문자열 적었을 때 값 안받게 막기)
             jackpot.className = "animation_none";
             if (MoneyValue < PointValue) {
                 if (!MoneyValue || MoneyValue <= 0) { // 코인 입력 칸이 없거나 코인 입력 값이 없거나 0보다 작으면 실행됨
+                    eventCheck = 0;
                     console.log("값 오류!");
                     jackpot.className = "animation_bounce2";
                     jackpot.src = "img/gambler_jackpot_money.png";
@@ -157,6 +160,7 @@
                         jackpot.className = "animation_bounce3";
                     }, 1200);
                 } else { // 코인이 적지 않으면 함수 실행
+                    eventCheck = 1;
                     console.log("함수 실행 직전!");
                     jackpot.className = "animation_bounce";
                     setTimeout(function() {document.getElementById("a").style.display = "block"}, 0); 
@@ -165,8 +169,10 @@
                     jackpot.src = "img/gambler_jackpot_load.png";
                     gifimg.src = "img/slotstart.gif";
                     startRoulette();
+                    eventCheck = 0;
                 }
             } else { // 코인이 적다!
+                eventCheck = 0;
                 console.log("코인이 적다!");
                 jackpot.className = "animation_bounce2";
                 jackpot.src = "img/gambler_jackpot_money.png";
@@ -175,7 +181,7 @@
                     jackpot.className = "animation_bounce3";
                 }, 1200);
             }
-        });
+        }
       </script>
 </body>
 </html>
