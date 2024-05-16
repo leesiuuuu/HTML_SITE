@@ -28,8 +28,6 @@ function gamblebasic() {
 
     gamble.innerText = `${point} COIN`; // 표시되어야 할 값을 설정
     setTimeout(() => {    
-        document.getElementById("back").disabled = false;
-        document.getElementById("front").disabled = false;
         gifimg.addEventListener("click", clickFunction);
     }, 1700);
 }
@@ -79,6 +77,8 @@ function randomBet(betAmount) {
         console.log("포인트가 부족합니다.");
         GamblerImage.src = "img/gambler_money.png";
         setTimeout(function() {
+            document.getElementById("back").disabled = false;
+            document.getElementById("front").disabled = false;
             GamblerImage.src = "img/gambler.png";
         }, 3000);
     }

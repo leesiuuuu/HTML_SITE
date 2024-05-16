@@ -161,7 +161,7 @@
                     startRoulette();
                     eventCheck = 0;
             } 
-            if(MoneyValue <= 0 || !MoneyValue){
+            else if(MoneyValue <= 0 || !MoneyValue){
                 eventCheck = 0;
                 console.log("에러남!");
                 jackpot.className = "animation_bounce2";
@@ -171,7 +171,7 @@
                     jackpot.className = "animation_bounce3";
                 }, 1200);
             }
-            if(PointValue - MoneyValue >= 0){
+            else if(PointValue - MoneyValue >= 0){
                 eventCheck = 0;
                 console.log("에러남!");
                 jackpot.className = "animation_bounce2";
