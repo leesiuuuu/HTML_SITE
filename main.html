@@ -121,7 +121,6 @@
             <h1 id = "goto"><a href="main1.html">!!사이트 바로가기!!</a></h1>
         </fieldset>
     </section>
-
     <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <script>
@@ -149,17 +148,8 @@
         function clickFunction(){
             let MoneyValue = parseInt(money.value); // 코인 입력을 int형으로 받음(문자, 문자열 적었을 때 값 안받게 막기)
             jackpot.className = "animation_none";
-            if (MoneyValue < PointValue) {
-                if (!MoneyValue || MoneyValue <= 0) { // 코인 입력 칸이 없거나 코인 입력 값이 없거나 0보다 작으면 실행됨
-                    eventCheck = 0;
-                    console.log("값 오류!");
-                    jackpot.className = "animation_bounce2";
-                    jackpot.src = "img/gambler_jackpot_money.png";
-                    setTimeout(() => {
-                        jackpot.src = "img/gambler_jackpot.png";
-                        jackpot.className = "animation_bounce3";
-                    }, 1200);
-                } else { // 코인이 적지 않으면 함수 실행
+            if (MoneyValue <= PointValue) {
+                // 코인이 적지 않으면 함수 실행
                     eventCheck = 1;
                     console.log("함수 실행 직전!");
                     jackpot.className = "animation_bounce";
@@ -170,8 +160,28 @@
                     gifimg.src = "img/slotstart.gif";
                     startRoulette();
                     eventCheck = 0;
-                }
-            } else { // 코인이 적다!
+            } 
+            if(MoneyValue <= 0 || !MoneyValue){
+                eventCheck = 0;
+                console.log("에러남!");
+                jackpot.className = "animation_bounce2";
+                jackpot.src = "img/gambler_jackpot_money.png";
+                setTimeout(() => {
+                    jackpot.src = "img/gambler_jackpot.png";
+                    jackpot.className = "animation_bounce3";
+                }, 1200);
+            }
+            if(PointValue - MoneyValue >= 0){
+                eventCheck = 0;
+                console.log("에러남!");
+                jackpot.className = "animation_bounce2";
+                jackpot.src = "img/gambler_jackpot_money.png";
+                setTimeout(() => {
+                    jackpot.src = "img/gambler_jackpot.png";
+                    jackpot.className = "animation_bounce3";
+                }, 1200);
+            }
+            else { // 코인이 적을때
                 eventCheck = 0;
                 console.log("코인이 적다!");
                 jackpot.className = "animation_bounce2";
