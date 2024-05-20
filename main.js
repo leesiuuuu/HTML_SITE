@@ -24,7 +24,7 @@ let point = parseInt(window.localStorage.getItem('point'));
 //COIN 값을 주기적으로 바꿔주는 함수
 function gamblebasic() {
     let gamble = document.getElementById("point");
-    let point = parseInt(window.localStorage.getItem('point')); // point 값을 가져옴]
+    let point = parseInt(window.localStorage.getItem('point')); // point 값을 가져옴
 
     gamble.innerText = `${point} COIN`; // 표시되어야 할 값을 설정
     setTimeout(() => {    
