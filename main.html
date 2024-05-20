@@ -138,7 +138,7 @@
         once: false,
       });</script>
       <script>
-        const PointValue = parseInt(window.localStorage.getItem("point") || 0); // 총 코인
+        let PointValue = parseInt(window.localStorage.getItem("point") || 0); // 총 코인
         const gifimg = document.querySelector("#gifimg"); // 레버
         const jackpot = document.getElementById("jacker"); // 케릭터 이미지
         let money = document.getElementById("battype"); // 입력칸
@@ -148,7 +148,7 @@
         function clickFunction(){
             let MoneyValue = parseInt(money.value); // 코인 입력을 int형으로 받음(문자, 문자열 적었을 때 값 안받게 막기)
             jackpot.className = "animation_none";
-            if(MoneyValue <= 0 || !MoneyValue || (PointValue < MoneyValue)){
+            if(MoneyValue <= 0 || !MoneyValue || (PointValue < MoneyValue)){ //입력값이 0보다 작거나 같거나, 입력값이 비어있거나, 포인트값보다 입력값이 더 클때 실행
                 console.log("돈이 없거나 칸이 비어있음!");
                 jackpot.className = "animation_bounce2";
                 jackpot.src = "img/gambler_jackpot_money.png";
@@ -157,7 +157,7 @@
                     jackpot.className = "animation_bounce3";
                 }, 1200);        
             }    
-            else{
+            else{ //그렇지 않을 때 실행
                 jackpot.className = "animation_bounce";
                 setTimeout(function() {document.getElementById("a").style.display = "block"}, 0); 
                 setTimeout(function() {document.getElementById("b").style.display = "block"}, 300); 
@@ -165,7 +165,7 @@
                 jackpot.src = "img/gambler_jackpot_load.png";
                 gifimg.src = "img/slotstart.gif";
                 startRoulette();
-            } // 코인이 적지 않으면 함수 실행 
+            }
         }
 
       </script>
